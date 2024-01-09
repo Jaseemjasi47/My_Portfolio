@@ -8,3 +8,21 @@ html{
   height: 100vh;
   overflow-x: hidden;
 }
+
+.background-image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  background-image: url("../public/Img/BG.png");
+  background-repeat: repeat-y; /* Repeat the image vertically */
+  background-size: cover;
+}
+
+@media (max-width: 767px) {
+  .background-image-container {
+    background-size: contain;
+    background-repeat: repeat;
+  }
+}

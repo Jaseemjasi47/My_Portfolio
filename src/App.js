@@ -8,14 +8,14 @@ import SocialMediaIcons from './Components/SocialMediaIcons';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App background-image-container">
       {/* <VideoBackground/>
       <div className="balckshade">
       <Introduction />
       <AnimatedProfession/>
       </div> */}
       <Intro/>
-      <SocialMediaIcons/>
+      {/* <SocialMediaIcons/> */}
     </div>
   );
 }

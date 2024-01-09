@@ -11,7 +11,8 @@ const Introduction = () => {
       };
   return (
     <div style={introductionStyle}>
-  <h1>Discover the World I Create</h1>
+  <h1>Hey Guys It's Me Jaseem</h1>
+  <h2>Discover the World I Create</h2>
    <p>
     Greetings! I'm a full-stack developer with a passion for crafting exceptional software solutions. As a skilled
     photographer and editor, I capture and enhance moments with authenticity and visual allure.
