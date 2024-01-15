@@ -1,22 +1,24 @@
 import './App.css';
-// import VideoBackground from './Components/BGVideo';
-// import Introduction from './Components/Introduction';
-// import AnimatedProfession from './Components/AnimatedProfession';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Intro from './Pages/Intro';
+import Contact from './Pages/Contact'; 
+import Portfolio from './Pages/Portfolio'; 
+import Navbar from './Pages/Navbar';
 import SocialMediaIcons from './Components/SocialMediaIcons';
-
 
 function App() {
   return (
-    <div className="App background-image-container">
-      {/* <VideoBackground/>
-      <div className="balckshade">
-      <Introduction />
-      <AnimatedProfession/>
-      </div> */}
-      <Intro/>
-      {/* <SocialMediaIcons/> */}
-    </div>
+    <Router>
+      <div className="App bg">
+        <Navbar/>
+        <Routes>
+          <Route path="/" element={<Intro />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+        <SocialMediaIcons/>
+      </div>
+    </Router>
   );
 }
 

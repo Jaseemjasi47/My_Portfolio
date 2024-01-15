@@ -1,19 +1,58 @@
-/* SocialMediaIcons.css */
 .social-media-icons {
-    position: relative;
-    width: 100%; /* Use 100% to ensure responsiveness */
-    height: auto;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding:10px; /* Adjust padding as needed */
+  font-family: 'Courier New', monospace;
+  width: 100vw;
+  /* Use 100% to ensure responsiveness */
+  height: auto;
+  background: #00070f;
+  color: white;
+  overflow: hidden;
+  padding: 15px 0 ;
+  /* Adjust padding as needed */
+  bottom: 0;
+}
+
+.title {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 10px;
+  border-bottom: 1px solid white;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+}
+
+.i-n {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-name {
+  margin-left: 10px;
+}
+@media (min-width: 768px) {
+  .social-media-icons {
+    position: fixed;
   }
   
-  .my-image {
-    width: 80%;
-    height: auto; /* Maintain aspect ratio */
-    max-width: 80%; /* Ensure the image does not exceed the container width */
-    object-fit: cover; /* Ensure the image covers the entire container */
+}
+
+.icon-name a {
+  color: inherit; /* Use the parent's color (white) for the link text */
+  text-decoration: none; /* Remove underline */
+}
+
+@media (max-width: 768px) {
+
+  .icon-name {
+    display: none;
   }
-  
+}

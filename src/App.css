@@ -1,28 +1,180 @@
 html{
   overflow-x: hidden;
+  background: linear-gradient(to left, #001018, #004974, #001018);
 }
 
-.balckshade{
+@media (min-width: 768px) {
+  html {
+    overflow-y: hidden;
+  }
+  
+}
+
+.ctd {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* .balckshade{
   background-color: 'rgba(0, 0, 0, 0.5)';
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
+} */
+
+.bg-png{
+  z-index: -1;
+  position: absolute;
+  max-width: 55%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.background-image-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: -1;
-  background-image: url("../public/Img/BG.png");
-  background-repeat: repeat-y; /* Repeat the image vertically */
-  background-size: cover;
+
+.bg {
+  /* z-index: 1;  */
+  /* background: linear-gradient(to left, #001018, #015688, #001018); */
+  /* background-image: url("../public/Img/me.png"); */
+  background-repeat: repeat-y;
+  background-size: cover; /* Ensure the background image covers the container */
 }
+
+.navbar {
+  width: 100vw;
+  height: 50px;
+  background: #000c14;
+  position: fixed;
+  border-bottom: 2px solid #ffffffea;
+  z-index: 999;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.63);
+}
+
+
+.intro {
+  z-index: 10;
+}
+
+
+.animation-box {
+  max-width: 80vw; /* Adjust the maximum width as needed */
+  width: 90%; /* Adjust the width percentage as needed */
+  height: 80px;
+  margin: 0 auto; /* Center the box horizontally */
+  padding: 20px;
+  background-color: #01060fe7; /* Dark background color */
+  border: 2px solid #ffffffea; /* Black border */
+  border-radius: 10px; /* Rounded corners for a more polished look */
+  box-shadow: 0 0 50px rgb(0, 0, 0); /* Optional: Add a subtle box shadow */
+  margin-bottom: 10px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.animation-box:hover {
+  background-color: #000; /* Darker background color on hover */
+  transform: scale(1.05); /* Scale the box on hover */
+}
+
+
 
 @media (max-width: 767px) {
-  .background-image-container {
-    background-size: contain;
-    background-repeat: repeat;
+  .bg-png {
+    max-width: 100%;
+  }
+
+
+  .animation-box{
+    height: 190px;
   }
 }
+
+
+/* ---------------------------------------  Button css --------------------------------------- */
+
+
+.intro_btn-action {
+  font-family: 'Courier New, monospace';
+  text-decoration: none;
+  display: flex;
+  justify-content: space-around;
+  max-width: 400px; /* Adjust as needed */
+  margin: 20px auto;
+  margin-bottom: 20px;
+}
+
+.ac_btn {
+  position: relative;
+  padding: 10px 20px;
+  font-size: 18px;
+  text-decoration: none;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  background-color: #060d16f3; /* Adjust the background color */
+  cursor: pointer;
+  border: 1px solid white;
+  border-radius: 10px;
+  z-index: 1;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.ac_btn:hover {
+  background-color: #000; /* Darker background color on hover */
+  transform: scale(1.05); /* Scale the box on hover */
+}
+
+
+.btn {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.ring {
+  position: absolute;
+  margin-left: 25px;
+  width: 70px;
+  height: 20px;
+  border-radius: 5px;
+  transform: scale(0);  
+  animation: ripple 2.8s ease-out infinite;
+}
+
+.ring.one {
+  background: #002038da;
+  animation-delay: 0.6s;
+}
+
+.ring.two {
+  background: #000000b2;
+  animation-delay: 1.2s;
+}
+
+.ring.three {
+  background: #001424;
+  animation-delay: 1.8s;
+}
+
+.ring.four {
+  background: #000000cc;
+  animation-delay: 2.4s;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+
+
+
+/* ---------------------------------------  Button CSS End --------------------------------------- */
+
+
+
+
+
