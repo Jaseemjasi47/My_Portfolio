@@ -4,10 +4,9 @@ import { TypeAnimation } from 'react-type-animation';
 const Introduction = () => {
     const introductionStyle = {
         fontFamily: 'Courier New, monospace', // Change the font-family to Courier New with a fallback to monospace
-        color: 'white',
         textAlign: 'center',
-        padding: '50px',
-        fontSize: '24px',
+        padding: '10px',
+        fontSize: '18px',
         // backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent background
       };
   return (
@@ -22,7 +21,7 @@ const Introduction = () => {
       speed={50}
       style={{ textAlign: 'center',
       padding: '10px 50px',
-      fontSize: '24px', display: 'inline-block', fontFamily: 'Courier New, monospace', color: 'white' }}
+      fontSize: '24px', display: 'inline-block', fontFamily: 'Courier New, monospace', color: 'White' }}
       repeat={Infinity}
     />
   {/* <h2>Discover the World I Create</h2> */}

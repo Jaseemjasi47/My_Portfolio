@@ -4,7 +4,10 @@ import AnimatedProfession from "./../Components/AnimatedProfession";
 function Portfolio() {
   return (
     <div className='ctd' >
-      <AnimatedProfession/>
+      <img src="Img/js.png" alt="Your Image" className="js" />
+      {/* <img src="Img/me.png" alt="Your Image" className="bg-png" /> */}
+      <img src="Img/jsoutline.png" alt="Your Image" className="jsoutline" />
+      {/* <AnimatedProfession/> */}
     </div>
   )
 }

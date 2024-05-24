@@ -1,13 +1,106 @@
-html{
+html {
   overflow-x: hidden;
-  background: linear-gradient(to left, #001018, #004974, #001018);
+  /* background: rgb(0, 0, 0); */
+  background: linear-gradient(45deg, #000000, #0d0118, #000000,  #0d0118, #000000);
 }
 
-@media (min-width: 768px) {
-  html {
-    overflow-y: hidden;
+/* Custom scrollbar for WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 2px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #000000; /* Color of the track */
+  border-radius: 6px; /* Rounded corners of the track */
+  opacity: .2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0d0118; /* Color of the thumb */
+  border-radius: 6px; /* Rounded corners of the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0b0014; /* Color of the thumb on hover */
+}
+
+
+body {
+  color: rgb(255, 255, 255);
+  font-family: 'Courier New', Courier, monospace;
+  user-select: none;
+}
+
+.blur {
+  filter: blur(15px);
+}
+
+.img-50 {
+  width: 50px;
+}
+
+.img-30 {
+  width: 30px;
+}
+
+/* .col-4-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 800px) {
+
+  .col-4-2 {
+    grid-template-columns: repeat(auto-fit, minmax(40vw, 1fr));
   }
-  
+}
+
+.text-center {
+  text-align: center;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.around {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+/* ---------------------------------------- margin & padding ---------------------------------- */
+
+.p-1 {
+  padding: 10px;
+}
+
+.py-1 {
+  padding: 10px 0;
+}
+
+.m-1 {
+  margin: 10px;
+}
+
+.p-color {
+  background: rgb(91, 193, 240);
+}
+
+/* ------------------------------------- font size ------------------------------ */
+
+.h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .ctd {
@@ -17,15 +110,26 @@ html{
   height: 100vh;
 }
 
-/* .balckshade{
-  background-color: 'rgba(0, 0, 0, 0.5)';
-  width: 100vw;
-  height: 100vh;
-  overflow-x: hidden;
-} */
 
-.bg-png{
-  z-index: -1;
+.js,
+.jsoutline {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* animation: zoomInOut 5s infinite alternate;  */
+}
+
+
+
+.js {
+  z-index: -4;
+  max-width: 60vw;
+  animation: zoomOut 5s infinite alternate;
+  /* Adjust the duration as needed */
+}
+
+.bg-png {
+  z-index: -3;
   position: absolute;
   max-width: 55%;
   top: 50%;
@@ -33,24 +137,104 @@ html{
   transform: translate(-50%, -50%);
 }
 
+.jsoutline {
+  z-index: -2;
+  max-width: 70vw;
+  animation: zoomInOut 5s infinite alternate;
+  /* Adjust the duration as needed */
+}
+
+@keyframes zoomInOut {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.4);
+  }
+}
+
+@keyframes rainAnimation {
+  to {
+    transform: translateY(100vh);
+  }
+}
 
 .bg {
   /* z-index: 1;  */
   /* background: linear-gradient(to left, #001018, #015688, #001018); */
   /* background-image: url("../public/Img/me.png"); */
   background-repeat: repeat-y;
-  background-size: cover; /* Ensure the background image covers the container */
+  background-size: cover;
+  /* Ensure the background image covers the container */
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .navbar {
   width: 100vw;
-  height: 50px;
-  background: #000c14;
+  height: 40px;
+  background: #00000000;
   position: fixed;
+  border-end-start-radius: 50px;
+  border-end-end-radius: 50px;
   border-bottom: 2px solid #ffffffea;
-  z-index: 999;
-  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.63);
+  z-index: 9999;
+  box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.39);
+  backdrop-filter: blur(10px);
+  animation: slideInFromRight 1s ease-out; /* Apply the animation */
 }
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.bottombar {
+  width: 100vw;
+  height: 20px;
+  background: rgba(0, 0, 0, 0); /* Make background transparent */
+  position: fixed;
+  bottom: 0; /* Fix to the bottom of the viewport */
+  border-top-left-radius: 50px; /* Apply border radius to top corners */
+  border-top-right-radius: 50px;
+  border-top: 2px solid #ffffffea;
+  z-index: 9999;
+  box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.39);
+  backdrop-filter: blur(10px);
+  animation: slideInFromBottom 1s ease-out; /* Apply the animation */
+}
+
+.footer {
+  background: rgba(0, 0, 0, 0); /* Make background transparent */
+  border-top-left-radius: 50px; /* Apply border radius to top corners */
+  border-top-right-radius: 50px;
+  border-top: 2px solid #ffffffea;
+  box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.39);
+  backdrop-filter: blur(10px);
+}
+
 
 
 .intro {
@@ -59,22 +243,31 @@ html{
 
 
 .animation-box {
-  max-width: 80vw; /* Adjust the maximum width as needed */
-  width: 90%; /* Adjust the width percentage as needed */
+  max-width: 80vw;
+  /* Adjust the maximum width as needed */
+  width: 90%;
+  /* Adjust the width percentage as needed */
   height: 80px;
-  margin: 0 auto; /* Center the box horizontally */
+  margin: 0 auto;
+  /* Center the box horizontally */
   padding: 20px;
-  background-color: #01060fe7; /* Dark background color */
-  border: 2px solid #ffffffea; /* Black border */
-  border-radius: 10px; /* Rounded corners for a more polished look */
-  box-shadow: 0 0 50px rgb(0, 0, 0); /* Optional: Add a subtle box shadow */
+  background-color: #6697d8f3;
+  /* Dark background color */
+  border: 2px solid #ffffffea;
+  /* Black border */
+  border-radius: 10px;
+  /* Rounded corners for a more polished look */
+  box-shadow: 0 0 50px rgb(0, 0, 0);
+  /* Optional: Add a subtle box shadow */
   margin-bottom: 10px;
   transition: background-color 0.3s, transform 0.3s;
 }
 
 .animation-box:hover {
-  background-color: #000; /* Darker background color on hover */
-  transform: scale(1.05); /* Scale the box on hover */
+  background-color: #000;
+  /* Darker background color on hover */
+  transform: scale(1.05);
+  /* Scale the box on hover */
 }
 
 
@@ -85,96 +278,82 @@ html{
   }
 
 
-  .animation-box{
+  .animation-box {
     height: 190px;
   }
 }
 
 
-/* ---------------------------------------  Button css --------------------------------------- */
-
-
-.intro_btn-action {
-  font-family: 'Courier New, monospace';
+.link {
   text-decoration: none;
-  display: flex;
-  justify-content: space-around;
-  max-width: 400px; /* Adjust as needed */
-  margin: 20px auto;
-  margin-bottom: 20px;
+  color: inherit;
 }
 
-.ac_btn {
-  position: relative;
-  padding: 10px 20px;
-  font-size: 18px;
-  text-decoration: none;
-  text-align: center;
-  color: #fff;
-  overflow: hidden;
-  background-color: #060d16f3; /* Adjust the background color */
-  cursor: pointer;
-  border: 1px solid white;
-  border-radius: 10px;
-  z-index: 1;
-  transition: background-color 0.3s, transform 0.3s;
-}
+/* ------------------------------------------------ gradients ------------------------------------------------- */
 
-.ac_btn:hover {
-  background-color: #000; /* Darker background color on hover */
-  transform: scale(1.05); /* Scale the box on hover */
+.grd-1 {
+  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 
-.btn {
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
+/* ------------------------------------------------ Cards -------------------------------------------------------  */
 
-.ring {
-  position: absolute;
-  margin-left: 25px;
-  width: 70px;
-  height: 20px;
-  border-radius: 5px;
-  transform: scale(0);  
-  animation: ripple 2.8s ease-out infinite;
-}
-
-.ring.one {
-  background: #002038da;
-  animation-delay: 0.6s;
-}
-
-.ring.two {
-  background: #000000b2;
-  animation-delay: 1.2s;
-}
-
-.ring.three {
-  background: #001424;
-  animation-delay: 1.8s;
-}
-
-.ring.four {
-  background: #000000cc;
-  animation-delay: 2.4s;
-}
-
-@keyframes ripple {
-  to {
-    transform: scale(3);
-    opacity: 0;
+.project-card {
+    width: 300px;
+    /* height: 200px; */
+    background: #00000000;
+    border-bottom: 2px solid #ffffffea;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.24);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-}
+  
+  .project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+
+  .project-card:hover .card-content h2 {
+    transform: translateY(-5px);
+  }
+  
+  .project-card:hover .card-content p {
+    opacity: 0.8;
+  }
+
+  .fade-in {
+    opacity: 1;
+    transition: opacity 1s ease-in;
+    animation: slideInFromBottom 1s ease-out;
+  }
+
+  .fade-out {
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+  }
+  
 
 
-
-
-/* ---------------------------------------  Button CSS End --------------------------------------- */
-
-
-
-
-
+  .tosolve-container {
+    margin: 20px;
+    overflow: hidden;
+  }
+  
+  .tosolve-text {
+    color: rgba(255, 255, 255, 0.144);
+    font-size: 2rem;
+    line-height: 1.2; /* Adjust line height as needed */
+    transition: color 0.3s ease; /* Smooth color transition */
+  }
+  
+  .tosolve-text.active {
+    color: rgb(255, 255, 255);
+  }
+  
