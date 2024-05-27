@@ -31,7 +31,7 @@ function ProjectCard({ title, imageUrl, link }) {
           </div>
           <img src={imageUrl} alt={title} className="img-50" />
         </div>
-        <p className="text-center py-1">Description here.</p>
+        {/* <p className="text-center py-1">Description here.</p> */}
         <div className="around">
           <div className="btn-view">View More</div>
           <a href={link} target="_blank" rel="noopener noreferrer" className="link">
